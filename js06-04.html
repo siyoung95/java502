@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ldb/jquery-3.6.0.js"></script>
+    <script>
+        // on() : 이벤트 리스너에 이벤트 등록하기
+
+            // $(선택자).on(이벤트종류, 실행할 소스코드(콜백함수));
+
+        // off() : 이벤트 리스너에 등록된 이벤트 삭제하기
+
+            // $(선택자).off(이벤트종류);
+
+        // one() : 이벤트 리스너에 1회용 이벤트 등록하기
+
+            // $(선택자).one(이벤트종류, 실행할 소스코드(콜백함수));
+
+        // trigger() : 강제로 대신 이벤트 발생 시키기
+
+            // $(선택자).trigger(이벤트종류);
+
+            $("#btn-trigger").trigger(function() {
+                "click");
+    </script>
+</head>
+<body>
+    
+    <button type="button" id="btn-trigger">클릭 시 btn-click 버튼을 클릭</button>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js05-02.html"></script>
+    <script>
+        var scroes= [];
+        scores[0] = prompt("점수를 입력해주세요");
+        scores[0] = Number(scores[0]);
+        scores[1] = prompt("점수를 입력해주세요");
+        scores[1] = Number(scores[1]);
+        scores[2]  = prompt("점수를 입력해주세요");
+        scores[2] = Number(scores[2]);
+        scores[3] = prompt("점수를 입력해주세요");
+        scores[3] = Number(scores[3]);
+        scores[4] = prompt("점수를 입력해주세요");
+        scores[4] = Number(scores[4]);
+
+        var total= 0;
+        var avr= 0;
+
+        for (var i=0; i<5; i++) {
+            total = total + scores[i];
+        }
+        
+        avg = total / cores.length;
+
+        consloe.log("입력된 점수의 총합은 " + total + "점이고, \n점수의 평균은 "
+        + avg + "점 입니다.");
+
+        //사용자 데이터 입력
+        function inputScore() {
+            scores[0] = prompt("점수를 입력해주세요");
+            scores[0] = Number(scores[0]);
+            scores[1] = prompt("점수를 입력해주세요");
+            scores[1] = Number(scores[1]);
+            scores[2]  = prompt("점수를 입력해주세요");
+            scores[2] = Number(scores[2]);
+            scores[3] = prompt("점수를 입력해주세요");
+            scores[3] = Number(scores[3]);
+            scores[4] = prompt("점수를 입력해주세요");
+            scores[4] = Number(scores[4]);
+        }
+        
+        //  점수 총합 계산
+        function dataCal() {
+            for (var i=0; i<scores.length; i++)
+        }
+
+        //점수 평균 계산
+        function avgScore() {
+            avg = total / scores.length;
+        }
+
+        // 총합 및 평균 점수 출력
+        function printScore() {
+            consloe.log("입력된 점수의 총합은 " + total + "점이고, \n점수의 평균은 "
+        + avg + "점 입니다.");
+        }
+
+        
+        var scores = [];
+        var total = 0;
+        var avg = 0;
+
+        inputScores();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

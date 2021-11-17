@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ldb/jquery-3.6.0.js"></script>
+    <script>
+        var n=0;
+        $(document).ready(function() {
+            $("button.add").on("click", function() {
+                $("h1, h2, p").addClass("blue");
+                $("div").addClass("important");
+            });
+        
+            $("button.remove").on("click", function() {
+                $("h1, h2, p").removeClass("blue");
+                $("div").removeClass("important");
+            });
+
+            $("button.toggle").on("click", function() {
+                $("h1, h2, p").toggleClass("important");
+            });
+        })
+
+        $("#div02 button").on("click", function() {
+            $("#div02 p").css({
+                "background-color": "yellow", "font-size": "200%"
+            });
+        });
+    </script>
+
+    <script>
+        
+    </script>
+    <style>
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML</h1>
+    <h2>CSS3</h2>
+    <p>자바스크립트</p>
+    <div>제이쿼리</div><br>
+    <button class="add">CSS 적용</button>
+    <button class="remove">CSS 적용 해제</button>
+    <button class="toggle">CSS</button>
+
+    <div id="div02">
+        <p>김길동</p>
+        <div>02-123-4567</div>
+        <p>이길동</p>
+        <div>042-567-2929</div>
+        <p>홍길동</p>
+        <div>051-278-9485</div>
+        <br><br>
+        <button>이름 강조</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-sizing</title>
+    <style>
+        /* box-sizing : html 태그의 크기를 설정 시 기준을 지정하는 속성 */
+        /* html 태그의 크기를 설정 시 width, height 를 설정하면 width, height가
+        실제 html 태그의 크기가 아님을 확인할 수 있다. */
+        /* width, height로 지정한 크기가 content영역까지의 크기를 의미함 */
+        /* box-sizing을 border-box로 설정하면 width, geight의 값이 
+        boder 영역까지 합한 크기로 지정됨 */
+        /* content-box(기본값), border-box  */
+        .box {
+            width : 300px;
+            height : 300px;
+            border : 10px dotted black;
+            margin : 20px;
+            padding : 10px;
+        }
+        .small {
+            width : 100px;
+            height : 100px;
+            position : absolute;
+            left : 50%;
+            top : 50%;
+            transform : translate(-50%, -50%);
+            background-color : yellowgreen;
+        }
+        .red {
+            background-color : red;
+            position : relative;
+            box-sizing : border-box;
+        }
+        .blue {
+            background-color : blue;
+            position : relative;
+            box-sizing : content-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box red"></div>
+    <div class="box small"></div>
+    <div class="box blue"></div>
+    <div class="box small"></div>
+</body>
+</html>

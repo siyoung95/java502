@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // onload를 사용한 html 로딩 후 자바스크립트 실행
+        // addEventListener를 사용한 html 로딩 후 자바스크립트 실행
+        // jquery를 이용한 html 로딩 후 자바스크립트 실행
+
+    </script>
+
+    <!-- <script>
+        // html 태그 로딩 이전에 자바스크립트 이벤트가 동작할 경우
+        var btn = document.querySelector("#btn")
+        btn.addEventListener("click", function() {
+            alert("클릭 이벤트 발생");
+        });
+    </script> -->
+
+    <!-- <script>
+        //onload를 사용한 html 로딩 후 자바스크립트 실행
+        window.onload = function() {
+            var btn = document.querySelector("#btn")
+            btn.addEventListener("click", function() {
+                alert("클릭 이벤트 발생");
+        });
+    }
+    </script> -->
+
+    <script>
+        window.addEventlistener ("DOMContentLoaded", function() {
+            var btn = document.querySelcetor ("#brn");
+            btn.addEventListener("click", function() {
+                alert("클릭 이벤트 발생");
+        });
+    
+
+        $(document).ready(function() {
+            var btn = document.querySelector("#btn")
+            btn.addEventListener("click", function() {
+                alert("클릭 이벤트 발생");
+        });
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">클릭 시 이벤트 발생</button>
+</body>
+</html>

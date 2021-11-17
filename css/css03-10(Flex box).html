@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex box 사용하기</title>
+    <style>
+        /* Flex Box : 기존의 float 및 position을 사용하지 않고 UI 를 배치하는 새로운 방식 */
+        /* Flex Box를 사용 시 부모가 되는 태그에 display : flex를 사용(해당 부모 태그를 flex-container라고 함) */
+        /* 자식 태그에 flextbox 효과가 적용 됨 */
+        /* flex container에는 여러가지 옵션이 존재함 */
+            /* flex-direction : 자식태그를 정의하는 방향을 설정함 */
+            /* flex-wrap : 자식태그의 크기가 클 경우 다음 라인으로 줄 변경 설정 */
+            /* flex-flow : flex-direction, flex-wrap를 동시에 사용하는 약식 설정 */
+            /* justify-content : 자식태그들을 가로 정렬할 때 사용 */
+            /* align-items : 자식태그들의 위치를 설정 */
+            /* align-content : 자식태그들을 세로 정렬할 때 사용 */
+
+            #div01 .flex-container {
+            display : flex;
+            background-color : dodgerblue;
+        }
+        #div01 .flex-container > div {
+            background-color : lightgray;
+            margin : 10px;
+            padding : 20px;
+            font-size : 32px;
+        }
+        #div01 .normal > div {
+            background-color : lightgray;
+            margin : 10px;
+            padding : 20px;
+            font-size : 32px;
+        }
+
+        /* flex-direction : 자식태그를 정의하는 방향을 설정함 */
+        /*  row(가로, 기본값), row-reverse(가로의 반대로), column(세로), reverse(가로의 반대로) */
+        #div02 .column, #div02 .reverse, #div02 .row, #div02 .row-reverse {
+            display : flex;
+            background-color : dodgerblue;
+        }
+
+        #div02 .column { flex-direction : column; }
+        #div02 .reverse { flex-direction : column-reverse; }
+        #div02 .row { flex-direction : row; }
+        #div02 .row-reverse { flex-direction : row-reverse; }
+
+        #div02 .column > div, #div02 .reverse > div, #div02 .row > div, #div02 .row-reverse > div { 
+            background-color : lightgray;
+            width : 100px;
+            margin : 10px;
+            padding : 20px;
+            font-size : 32px;
+        }
+        
+        /* flex-wrap : 자식태그의 크기가 클 경우 다음 라인으로 줄 변경 설정 */
+        /* wrap(줄바꿈), nowrap(줄바꿈 없음), wrap-reverse(줄 바꿈 후 위로 올라감) */
+        #div03 {margin : 20px 0px; }
+        #div03 .container {
+            display : flex;
+            background-color : dodgerblue;
+            margin : 10px;
+        }
+        #div03 .wrap { flex-wrap : wrap; }
+        #div03 .nowrap { flex-wrap : nowrap; }
+        #div03 .wrap-reverse { flex-wrap : wrap-reverse; }
+
+        #div03 .container > div {
+            background-color : lightgray;
+            width : 100px;
+            margin : 10px;
+            text-align : center;
+            font-size : 30px;
+        }
+
+        /* justify-content : 자식태그들을 가로 정렬할 때 사용 */
+        /* flex-start(기본, 왼쪽), center(중앙), flex-end(오른쪽), space-around(양쪽, 첫번째와 마지막 자식태그의 여백을 모두 살려서 표현), 
+        space-between(양쪽, 첫번째와 마지막 자식 태그의 양끝의 여백을 삭제함) */
+        #div04 .container {
+            margin : 10px;
+            display : flex;
+            background-color : dodgerblue;
+        }
+        #div04 .start { justify-content : flex-start; }
+        #div04 .center { justify-content : center; }
+        #div04 .end { justify-content : flex-end; }
+        #div04 .around { justify-content : space-around; }
+        #div04 .between { justify-content : space-between; }
+
+        #div04 .container > div {
+            background-color : lightgray;
+            width : 100px;
+            margin : 10px;
+            text-align : center;
+            font-size : 32px;
+
+        }
+        /* align-items : 자식태그들의 위치를 선정 */
+        /* flex-start(상단), center, flex-end(하단), stretch(채움), baseline(다른 태그들의 평균에 위치) */
+
+        #div06 .container {
+            display : flex;
+            background-color: dodgerblue;
+            height : 300px;
+            margin : 10px;
+        }
+
+        #div06 .start { align-items : flex-start; }
+        #div06 .center { align-items : center; }
+        #div06 .end { align-items : flex-end; }
+        #div06 .stretch { align-items : stretch; }
+        #div06 .baseline { align-items : baseline; }
+
+        #div06 .container > div {
+            width : 100px;
+            margin : 10px;
+            text-align : center;
+            font-size : 32px;
+            background-color: lightgray;
+        }
+        /* align-content : 자식태그들을 세로 정렬할 떄 사용 */
+        /* space-between, space-around, stretch, flex-start, center, flex-enc */
+
+        #div05 .container {
+            display : flex;
+            flex-wrap : wrap;
+            height : 300px;
+            margin : 10px;
+            background-color: dodgerblue; 
+        }
+        #div05 .start { align-content : flex-start }
+        #div05 .center { align-content : center }
+        #div05 .end { align-content : flex-end }
+        #div05 .around { align-content : space-around }
+        #div05 .between { align-content : space-between }
+        #div05 .stretch { align-content : stretch }
+
+        #div05 .container > div {
+            width : 100px;
+            margin : 10px;
+            text-align : center;
+            font-size : 32px;
+            background-color: lightgray;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div class="normal">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <hr>
+        <div id="div02">
+            <div class="column">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+            <div class="reverse">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+            <div class="row">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+            <div class="row-reverse">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </div>
+    </div>
+    <div id="div03">
+        <div class="container wrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container nowrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container wrap-reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div04">
+        <div class="container start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div> 
+        <div class="container end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>align-content 사용하기</h3>
+    <div id="div05">
+        <div class="container start">start
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container center">center
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container end">end
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container around">around
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container between">between
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container stretch">stretch
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>align-items사용하기</h3>
+    <div id="div06">
+        <div class="container start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container stretch">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container baseline">
+            <div><h1>1</h1></div>
+            <div><h6>2</h6></div>
+            <div><h3>3</h3></div>
+            <div><small>4</small></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow 프로퍼티</title>
+    <style>
+        p {
+            width : 15em;
+            height : 3em;
+            border : 1px solid lightgray;
+        }
+        /* overflow : 해당 태그의 지정된 범위를 넘어서는 컨텐츠를 화면에 출력하는 방식을 출력하는 속성 */
+        /* hidden(숨김), visible(기본값), scroll(스크롤 무조건), auto(크기에 따라 스크롤 자동 생성) */
+        /* overflow-x, overflow-y 도 존재함*/
+        .hidden { overflow : hidden; }
+        .visible { overflow : visible; }
+        .scroll { overflow : scroll; }
+        .auto { overflow : auto; }
+    </style>
+</head>
+<body>
+    <h3>overflow 프로퍼티</h3>
+    <hr>
+    <p class="hidden">overflow에 hidden 값을 적용하면 
+        박스를 넘어가는 내용이 잘려 보이지 않습니다.</p><br>
+    <p class="visible">overflow에 visivle 값을 적용하면
+        콘텐츠가 박스를 넘어가서도 출력됩니다.</p><br>
+    <p class="scroll">overflow에 scroll 값을 적용하면
+        박스에 스크롤바를 붙여 출력합니다.</p><br>
+    <p class="auto">overflow에 scroll 값을 적용하면
+        박스의 내용에 따라 자동으로 스크롤바가 생겼다가 없어졌다 함</p>
+</body>
+</html>

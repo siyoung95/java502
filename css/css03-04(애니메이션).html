@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 만들기</title>
+    <style>
+        .box {
+            width : 100px;
+            height: 100px;
+            background: red;
+            /* 애니메이션을 실행할 keyframe 이름 */
+            animation-name: divmove;
+            /* 애니메이션의 실행이 종료되기까지의 시간 */
+            animation-duration: 5s;
+            position : relative;
+        }
+        /* 애니메이션을 적용시킨 모양 설정 */
+        @keyframes divmove {
+            0% { background-color : red; left : 0px; top : 0px;}
+            50% { background-color : blue; left : 100px; top : 0px;}
+            100%{ background-color : red; left : 0px; top : 0px;}
+        }
+        h3 {
+            animation-name : bomb;
+            animation-duration : 3s;
+            /* 애니메이션 반복 횟수 */
+            animation-iteration-count : infinite;
+        }
+
+        
+        span {
+            animation-name : rainbow;
+            animation-duration : 5s;
+            animation-iteration-count : infinite;
+            font-size : 50px; 
+            font-weight : bold;
+            
+        }
+        @keyframes rainbow {
+            0% { color : red; }
+            30% { color : green; }
+            100%{ color : purple; } 
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>꽝!</h3>
+    <hr>
+    <div class="box"></div>
+
+    <div>
+        글자가 <span>시간</span>이 지남에 따라 계속 변경 됩니다.
+    </div>
+   
+        <!-- 문제1) 아래의 텍스트 중 span 태그 내에 있는 글자를 
+            빨강, 주황, 노랑, 파랑, 군청, 보라 색 순으로
+            변경되는 애니메이션을 구현하세요 -->
+        <!-- 총 애니메이션 동작 시간은 5초 -->
+        <!-- keyframe 이름 : rainbow -->
+</div>
+</body>
+</html>
